@@ -6,7 +6,7 @@ public class DepositCalculator {
         return describeCircle(pay);
     }
 
-    double countsSimplePercent (double amount, int period) {
+    double countsSimplePercent(double amount, int period) {
         return describeCircle(amount + amount * 0.06 * period);
     }
 
@@ -16,26 +16,26 @@ public class DepositCalculator {
     }
 
     void executesProgram() {
-        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println ("Введите сумму вклада в рублях:");
-        int amount = scanner.nextInt ();
+        System.out.println("Введите сумму вклада в рублях:");
+        int amount = scanner.nextInt();
 
-        System.out.println ("Введите срок вклада в годах:");
-        int period = scanner.nextInt ();
+        System.out.println("Введите срок вклада в годах:");
+        int period = scanner.nextInt();
 
-        System.out.println ("Выберите тип вклада, " +
+        System.out.println("Выберите тип вклада, " +
                 "1 - вклад с обычным процентом, " +
                 "2 - вклад с капитализацией:");
-        int command = scanner.nextInt ();
+        int command = scanner.nextInt();
 
         double finalAmount = 0;
 
         if (command == 1) {
-            finalAmount = countsSimplePercent (amount, period);
+            finalAmount = countsSimplePercent(amount, period);
 
         } else if (command == 2) {
-            finalAmount = countsHardPercent (amount, period);
+            finalAmount = countsHardPercent(amount, period);
         }
 
         System.out.println("Результат вклада: " + amount + " за " + period + " лет превратятся в " + finalAmount);
